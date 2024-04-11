@@ -1,0 +1,29 @@
+# Dependency directories
+node_modules/
+
+# iOS build directory
+ios/build/
+
+# Android build directory
+android/build/
+
+# Logs
+*.log
+
+# Debugging files
+android/app/src/main/assets/index.android.bundle
+android/app/src/main/assets/index.android.bundle.meta
+android/app/build/
+ios/Pods/
+ios/build/
+
+# Environment variables
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# macOS metadata
+.DS_Store
