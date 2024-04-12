@@ -1,4 +1,4 @@
-package com.billbox;
+package com.Billbox;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -14,7 +14,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "billbox";
+    return "Billbox";
   }
 
   /**

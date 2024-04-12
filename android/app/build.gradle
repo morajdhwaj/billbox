@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.billbox"
+    namespace "com.Billbox"
     defaultConfig {
-        applicationId "com.billbox"
+        applicationId "com.Billbox"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

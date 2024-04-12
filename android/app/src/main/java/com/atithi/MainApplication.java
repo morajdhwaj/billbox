@@ -1,4 +1,4 @@
-package com.billbox;
+package com.Billbox;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
