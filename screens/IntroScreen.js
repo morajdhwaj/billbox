@@ -7,14 +7,14 @@ const IntroScreen = ({ navigation }) => {
   const slides = [
     {
       key: "1",
-      title: "Intro Stock Photos",
-      text: "Escape the Ordinary: Feed Your Adventurous Spirit and Discover a World of New Flavors!",
+      title: "Intro Stock Photos 2 Hard-Hitting Intro Backgrounds",
+      text: "Escape the Ordinary: Feed Your Adventurous Spirit and Discover a World of New Flavors Adventurous Spirit and Discover a World of New Flavors!!",
       image: require("../assets/images/intro-1.jpeg"),
       backgroundColor: "red",
     },
     {
       key: "2",
-      title: "Intro Background Images",
+      title: "Intro Background Images ",
       text: "Say goodbye to late deliveries and start your craving journey with us! Get your food delivered in minutes.",
       image: require("../assets/images/intro-2.jpeg"),
       backgroundColor: "blue",
@@ -69,17 +69,40 @@ const IntroScreen = ({ navigation }) => {
   const renderSlide = ({ item }) => {
     return (
       <View style={tw``}>
-        <View style={tw` h-4/6 w-full`} source={item.image}>
-          <Image style={tw` h-1/1 w-full`} source={item.image} />
+        <View
+          style={tw` h-5/8 w-full bg-black items-center justify-center`}
+          source={item.image}
+        >
+          <Image style={tw` h-5/6 w-5/6 rounded-2xl`} source={item.image} />
         </View>
-        <View style={tw`h-2/6 bg-black `}>
-          <Text style={tw`text-center font-bold  text-xl pt-5  text-white`}>
+        <View style={tw`h-3/8 bg-black px-5 `}>
+          <Text style={tw`font-bold text-xl pt-5 text-white`}>
             {item.title}
           </Text>
-          <Text style={tw`text-center mx-10 mt-3  text-white`}>
-            {item.text}
-          </Text>
+          <Text style={tw`mt-3  text-[#FBFBFB] leading-6`}>{item.text}</Text>
         </View>
+      </View>
+    );
+  };
+
+  const renderNextButton = () => {
+    return (
+      <View style={tw`bg-[#9DE9D7]   rounded-full`}>
+        <Text style={tw`px-5 py-2 text-black `}>Next </Text>
+      </View>
+    );
+  };
+  const renderDoneButton = () => {
+    return (
+      <View style={tw`bg-[#9DE9D7] rounded-full`}>
+        <Text style={tw`px-5 py-2 text-black `}>Done </Text>
+      </View>
+    );
+  };
+  const renderPrevButton = () => {
+    return (
+      <View style={tw`bg-[#9DE9D7] rounded-full`}>
+        <Text style={tw`px-5 py-2 text-black `}>Prev </Text>
       </View>
     );
   };
@@ -89,8 +112,12 @@ const IntroScreen = ({ navigation }) => {
       data={slides}
       renderItem={renderSlide}
       onDone={() => navigation.navigate("LoginScreen")}
-      activeDotStyle={{ backgroundColor: "white" }}
+      activeDotStyle={{ backgroundColor: "#9DE9D7" }}
       dotStyle={{ backgroundColor: "gray" }}
+      renderNextButton={renderNextButton}
+      renderDoneButton={renderDoneButton}
+      renderPrevButton={renderPrevButton}
+      showPrevButton
     />
   );
 };
