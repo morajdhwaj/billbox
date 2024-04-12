@@ -5,15 +5,14 @@ import tw from "twrnc";
 const LoginScreen = ({ navigation }) => {
   return (
     <View style={tw``}>
-      <Text style={tw`text-black`}>LoginScreen</Text>
       <TouchableOpacity>
         <Text
-          style={tw`mt-5 text-red-500`}
+          style={tw`mt-5 text-black`}
           onPress={() => {
             navigation.navigate("HomeScreen");
           }}
         >
-          Forgot Password
+          Home Screen
         </Text>
       </TouchableOpacity>
     </View>
