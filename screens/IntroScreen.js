@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Image, PermissionsAndroid, Text, View } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import tw from "twrnc";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const IntroScreen = ({ navigation }) => {
   const slides = [
@@ -75,7 +76,7 @@ const IntroScreen = ({ navigation }) => {
         >
           <Image style={tw` h-5/6 w-5/6 rounded-2xl`} source={item.image} />
         </View>
-        <View style={tw`h-3/8 bg-black px-5 `}>
+        <View style={tw`h-3/8 bg-black px-8 `}>
           <Text style={tw`font-bold text-xl pt-5 text-white`}>
             {item.title}
           </Text>
@@ -86,23 +87,12 @@ const IntroScreen = ({ navigation }) => {
   };
 
   const renderNextButton = () => {
-    return (
-      <View style={tw`bg-[#9DE9D7]   rounded-full`}>
-        <Text style={tw`px-5 py-2 text-black `}>Next</Text>
-      </View>
-    );
+    return <Ionicons name="arrow-forward" size={30} color="#9DE9D7" />;
   };
   const renderDoneButton = () => {
     return (
       <View style={tw`bg-[#9DE9D7] rounded-full`}>
-        <Text style={tw`px-5 py-2 text-black `}>Done</Text>
-      </View>
-    );
-  };
-  const renderPrevButton = () => {
-    return (
-      <View style={tw`bg-[#9DE9D7] rounded-full`}>
-        <Text style={tw`px-5 py-2 text-black `}>Prev</Text>
+        <Text style={tw`px-5 py-2 text-black `}>Get Started</Text>
       </View>
     );
   };
@@ -112,12 +102,10 @@ const IntroScreen = ({ navigation }) => {
       data={slides}
       renderItem={renderSlide}
       onDone={() => navigation.navigate("LoginScreen")}
-      activeDotStyle={{ backgroundColor: "#9DE9D7" }}
-      dotStyle={{ backgroundColor: "gray" }}
+      activeDotStyle={{ backgroundColor: "black" }}
+      dotStyle={{ backgroundColor: "black" }}
       renderNextButton={renderNextButton}
       renderDoneButton={renderDoneButton}
-      renderPrevButton={renderPrevButton}
-      showPrevButton
     />
   );
 };
