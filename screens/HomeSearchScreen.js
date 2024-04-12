@@ -21,6 +21,16 @@ const HomeSearchScreen = ({ navigation }) => {
           maxLength={10}
         />
       </View>
+      <View style={tw`p-5`}>
+        <View style={tw`flex`}>
+          <View style={tw`flex flex-row items-center `}>
+            <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+              <AntDesign name="arrowleft" size={30} color="white" />
+            </TouchableOpacity>
+            <Text>Company Name</Text>
+          </View>
+        </View>
+      </View>
     </View>
   );
 };
