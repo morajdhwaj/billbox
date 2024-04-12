@@ -88,21 +88,21 @@ const IntroScreen = ({ navigation }) => {
   const renderNextButton = () => {
     return (
       <View style={tw`bg-[#9DE9D7]   rounded-full`}>
-        <Text style={tw`px-5 py-2 text-black `}>Next </Text>
+        <Text style={tw`px-5 py-2 text-black `}>Next</Text>
       </View>
     );
   };
   const renderDoneButton = () => {
     return (
       <View style={tw`bg-[#9DE9D7] rounded-full`}>
-        <Text style={tw`px-5 py-2 text-black `}>Done </Text>
+        <Text style={tw`px-5 py-2 text-black `}>Done</Text>
       </View>
     );
   };
   const renderPrevButton = () => {
     return (
       <View style={tw`bg-[#9DE9D7] rounded-full`}>
-        <Text style={tw`px-5 py-2 text-black `}>Prev </Text>
+        <Text style={tw`px-5 py-2 text-black `}>Prev</Text>
       </View>
     );
   };
