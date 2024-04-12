@@ -4,7 +4,7 @@ import { Image, View } from "react-native";
 
 const SplashScreen = ({ navigation }) => {
   setTimeout(() => {
-    navigation.navigate("LoginScreen");
+    navigation.navigate("IntroScreen");
   }, 3000);
 
   return (

@@ -15,6 +15,16 @@ const LoginScreen = ({ navigation }) => {
           Home Screen
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity>
+        <Text
+          style={tw`mt-5 text-black`}
+          onPress={() => {
+            navigation.navigate("IntroScreen");
+          }}
+        >
+          Intro Screen
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
