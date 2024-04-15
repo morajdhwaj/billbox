@@ -16,17 +16,17 @@ const HomeUpperTabs = ({ navigation }) => {
         />
         <Text style={tw`text-white text-2xl font-bold`}>Bills</Text>
       </View>
-      <View style={tw`flex flex-row items-center gap-4`}>
+      <View style={tw`flex flex-row items-center gap-5`}>
         <TouchableOpacity
           onPress={() => navigation.navigate("HomeSearchScreen")}
         >
-          <AntDesign name="search1" size={30} color="white" />
+          <AntDesign name="search1" size={25} color="white" />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("ScannerScreen")}>
-          <MaterialIcons name="qr-code-scanner" size={30} color="white" />
+          <MaterialIcons name="qr-code-scanner" size={25} color="white" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <FontAwesome name="user-circle" size={30} color="white" />
+          <FontAwesome name="user-circle" size={25} color="white" />
         </TouchableOpacity>
       </View>
     </View>

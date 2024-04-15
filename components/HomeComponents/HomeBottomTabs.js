@@ -21,13 +21,13 @@ const HomeBottomTabs = () => {
   return (
     <View style={tw`p-5 mx-5 flex flex-row justify-between`}>
       <TouchableOpacity>
-        <FontAwesome6 name="receipt" size={30} color="white" />
+        <FontAwesome6 name="receipt" size={25} color="white" />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => scanDocument()}>
-        <AntDesign name="pluscircle" size={50} color="white" />
+        <AntDesign name="pluscircle" size={40} color="white" />
       </TouchableOpacity>
       <TouchableOpacity>
-        <MaterialIcons name="payment" size={30} color="white" />
+        <MaterialIcons name="payment" size={25} color="white" />
       </TouchableOpacity>
     </View>
   );
