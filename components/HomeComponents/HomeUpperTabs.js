@@ -25,7 +25,7 @@ const HomeUpperTabs = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("ScannerScreen")}>
           <MaterialIcons name="qr-code-scanner" size={25} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
           <FontAwesome name="user-circle" size={25} color="white" />
         </TouchableOpacity>
       </View>

@@ -11,6 +11,7 @@ import IntroScreen from "./screens/IntroScreen";
 import LoginOTPScreen from "./screens/LoginOTPScreen";
 import ScannerScreen from "./screens/ScannerScreen";
 import HomeSearchScreen from "./screens/HomeSearchScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ function App() {
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
           <Stack.Screen name="ScannerScreen" component={ScannerScreen} />
           <Stack.Screen name="HomeSearchScreen" component={HomeSearchScreen} />
+          <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         </Stack.Navigator>
       </NavigationContainer>
       <Toast />

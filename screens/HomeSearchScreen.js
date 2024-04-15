@@ -10,7 +10,7 @@ const HomeSearchScreen = ({ navigation }) => {
   return (
     <View style={tw`bg-black h-full`}>
       <View
-        style={tw`flex flex-row w-full items-center px-5 border-b border-gray-500`}
+        style={tw`flex flex-row w-full items-center px-5 border-b border-gray-300`}
       >
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
           <AntDesign name="arrowleft" size={20} color="white" />
