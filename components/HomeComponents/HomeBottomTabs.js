@@ -7,17 +7,7 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome6 from "react-native-vector-icons/FontAwesome6";
 import DocumentScanner from "react-native-document-scanner-plugin";
 
-const HomeBottomTabs = () => {
-  const [scannedImage, setScannedImage] = useState();
-
-  const scanDocument = async () => {
-    const { scannedImages } = await DocumentScanner.scanDocument({});
-
-    if (scannedImages?.length > 0) {
-      setScannedImage(scannedImages[0]);
-    }
-  };
-
+const HomeBottomTabs = ({ navigation, scannedImage, scanDocument }) => {
   return (
     <View style={tw`p-5 mx-5 flex flex-row justify-between`}>
       <TouchableOpacity>

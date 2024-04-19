@@ -100,7 +100,9 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={tw`text-white text-lg font-semibold`}>
                 All Bills
               </Text>
-              <Text style={tw`text-white text-xs`}>Wallet</Text>
+              <Text style={tw`text-white text-xs`}>
+                Get all bills and details
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
