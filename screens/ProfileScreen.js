@@ -73,10 +73,7 @@ const ProfileScreen = ({ navigation }) => {
         <View
           style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
         >
-          <TouchableOpacity
-            style={tw`flex flex-row items-center gap-5`}
-            onPress={onShare}
-          >
+          <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
               <FontAwesome5 name="wallet" size={15} color="white" />
             </View>
@@ -89,10 +86,7 @@ const ProfileScreen = ({ navigation }) => {
         <View
           style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
         >
-          <TouchableOpacity
-            style={tw`flex flex-row items-center gap-5`}
-            onPress={onShare}
-          >
+          <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
               <MaterialIcons name="receipt" size={15} color="white" />
             </View>
