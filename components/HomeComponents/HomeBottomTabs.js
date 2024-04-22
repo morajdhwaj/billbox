@@ -10,7 +10,7 @@ import DocumentScanner from "react-native-document-scanner-plugin";
 const HomeBottomTabs = ({ navigation, scannedImage, scanDocument }) => {
   return (
     <View style={tw`p-5 mx-5 flex flex-row justify-between`}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("BillsScreen")}>
         <FontAwesome6 name="receipt" size={25} color="white" />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => scanDocument()}>

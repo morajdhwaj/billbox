@@ -6,6 +6,7 @@ import Toast from "react-native-toast-message";
 
 const UploadImage = ({ scannedImage }) => {
   const uploadFile = async () => {
+    console.log("Helloss");
     try {
       const formData = new FormData();
       formData.append("file", {
