@@ -75,7 +75,7 @@ const BillsScreen = () => {
         {bills?.reverse().map((bill) => {
           return (
             <View style={tw`  mt-10 mx-5`} key={bill.id}>
-              <Text style={tw`text-black`}>{bill.id}</Text>
+              <Text style={tw`text-white`}>{bill.id}</Text>
 
               <Image
                 source={{ uri: bill?.url }}
