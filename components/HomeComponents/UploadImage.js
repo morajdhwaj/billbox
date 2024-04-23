@@ -4,9 +4,8 @@ import tw from "twrnc";
 import axios from "axios";
 import Toast from "react-native-toast-message";
 
-const UploadImage = ({ scannedImage }) => {
+const UploadImage = ({ scannedImage, setScannedImage }) => {
   const uploadFile = async () => {
-    console.log("Helloss");
     try {
       const formData = new FormData();
       formData.append("file", {
@@ -19,7 +18,7 @@ const UploadImage = ({ scannedImage }) => {
 
       const options = {
         method: "POST",
-        url: "https://billbox-backend.onrender.com/image/upload-image",
+        url: "https://billbox.catax.me/image/upload-image",
         params: { user_id: "66222aa6020a92d53d8566bd", file_name: "image" },
         headers: {
           "Content-Type": "multipart/form-data",
@@ -31,6 +30,7 @@ const UploadImage = ({ scannedImage }) => {
         .request(options)
         .then(function (response) {
           console.log(response.data, "success");
+          setScannedImage("");
           Toast.show({
             type: "success",
             text1: response?.data?.message,
@@ -38,10 +38,16 @@ const UploadImage = ({ scannedImage }) => {
           });
         })
         .catch(function (error) {
-          console.error(error, "error");
+          console.error(error?.response?.data?.detail?.message, "error");
+          setScannedImage("");
+          Toast.show({
+            type: "error",
+            text1: error?.response?.data?.detail?.message,
+            visibilityTime: 2000,
+          });
         });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

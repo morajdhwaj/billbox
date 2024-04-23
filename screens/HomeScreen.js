@@ -7,7 +7,7 @@ import DocumentScanner from "react-native-document-scanner-plugin";
 import UploadImage from "../components/HomeComponents/UploadImage";
 
 const HomeScreen = ({ navigation }) => {
-  const [scannedImage, setScannedImage] = useState();
+  const [scannedImage, setScannedImage] = useState("");
 
   const scanDocument = async () => {
     const { scannedImages } = await DocumentScanner.scanDocument({});
@@ -20,7 +20,12 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={tw`bg-[#121212] h-full flex justify-between`}>
       <HomeUpperTabs navigation={navigation} />
-      {scannedImage && <UploadImage scannedImage={scannedImage} />}
+      {scannedImage && (
+        <UploadImage
+          scannedImage={scannedImage}
+          setScannedImage={setScannedImage}
+        />
+      )}
       <HomeBottomTabs
         navigation={navigation}
         scannedImage={scannedImage}
