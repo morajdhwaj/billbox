@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import tw from "twrnc";
 import axios from "axios";
 
-const BillsScreen = () => {
+const BillsScreen = ({ navigation }) => {
   const [bills, setBills] = useState([]);
 
   useEffect(() => {
@@ -75,12 +75,20 @@ const BillsScreen = () => {
         {bills?.reverse().map((bill) => {
           return (
             <View style={tw`  mt-10 mx-5`} key={bill.id}>
-              <Text style={tw`text-white`}>{bill.id}</Text>
+              <Text style={tw`text-white`}>{bill?.image_name}</Text>
 
-              <Image
-                source={{ uri: bill?.url }}
-                style={{ width: 300, height: 200, borderRadius: 10 }}
-              />
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("SingleBillScreen", {
+                    imageUrl: bill?.url,
+                  })
+                }
+              >
+                <Image
+                  source={{ uri: bill?.url }}
+                  style={{ width: 300, height: 200, borderRadius: 10 }}
+                />
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => createAlert(bill?.id)}
                 style={tw`my-5 bg-[#9DE9D7]   self-start p-2 rounded`}

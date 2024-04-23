@@ -1,10 +1,12 @@
 import { View, Text, Image, TouchableOpacity, TextInput } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import tw from "twrnc";
 import axios from "axios";
 import Toast from "react-native-toast-message";
 
 const UploadImage = ({ scannedImage, setScannedImage }) => {
+  const [imageName, setImageName] = useState("");
+
   const uploadFile = async () => {
     try {
       const formData = new FormData();
@@ -19,7 +21,7 @@ const UploadImage = ({ scannedImage, setScannedImage }) => {
       const options = {
         method: "POST",
         url: "https://billbox.catax.me/image/upload-image",
-        params: { user_id: "66222aa6020a92d53d8566bd", file_name: "image" },
+        params: { user_id: "66222aa6020a92d53d8566bd", file_name: imageName },
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -62,6 +64,8 @@ const UploadImage = ({ scannedImage, setScannedImage }) => {
             <TextInput
               style={tw`border-b-2 border-b-gray-400 text-2xl  text-white  font-bold  px-5`}
               placeholder="Image Name"
+              value={imageName}
+              onChangeText={setImageName}
             />
           </View>
         </View>
