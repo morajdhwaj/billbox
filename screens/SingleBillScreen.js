@@ -1,13 +1,19 @@
-import { View, Text, Image } from "react-native";
 import React from "react";
-import tw from "twrnc";
+import { View } from "react-native";
+import ImageZoomViewer from "react-native-image-zoom-viewer";
 
 const SingleBillScreen = ({ route }) => {
   const imageUrl = route?.params?.imageUrl;
 
   return (
-    <View>
-      <Image source={{ uri: imageUrl }} style={tw`h-full w-full`} />
+    <View style={{ flex: 1 }}>
+      <ImageZoomViewer
+        imageUrls={[{ url: imageUrl }]}
+        enableSwipeDown
+        enablePreload
+        style={{ flex: 1 }}
+        renderIndicator={() => null}
+      />
     </View>
   );
 };
