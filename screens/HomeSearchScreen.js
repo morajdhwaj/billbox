@@ -12,7 +12,7 @@ const HomeSearchScreen = ({ navigation }) => {
       <View
         style={tw`flex flex-row w-full items-center px-5 border-b border-gray-300`}
       >
-        <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={20} color="white" />
         </TouchableOpacity>
         <TextInput

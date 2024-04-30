@@ -5,10 +5,12 @@ import {
   ScrollView,
   TouchableOpacity,
   Alert,
+  TextInput,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import tw from "twrnc";
 import axios from "axios";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 const BillsScreen = ({ navigation }) => {
   const [bills, setBills] = useState([]);
@@ -71,6 +73,27 @@ const BillsScreen = ({ navigation }) => {
 
   return (
     <ScrollView style={tw`bg-[#121212] h-full`}>
+      <View
+        style={tw`flex flex-row w-full items-center justify-between px-5 mt-5`}
+      >
+        <View style={tw`flex flex-row gap-5`}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <AntDesign name="arrowleft" size={20} color="white" />
+          </TouchableOpacity>
+          <Text style={tw`text-white text-xl`}>Bills</Text>
+        </View>
+        <View style={tw`flex flex-row items-center gap-5`}>
+          <TextInput
+            style={tw`   text-white  w-40 border border-[#9DE9D7] h-10 px-4  rounded-full`}
+            placeholder="Search bills"
+            placeholderTextColor="#999999"
+            maxLength={10}
+          />
+          <TouchableOpacity>
+            <AntDesign name="filter" size={25} color="#9DE9D7" />
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={tw`  mx-5`}>
         {bills?.reverse().map((bill) => {
           return (

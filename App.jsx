@@ -14,6 +14,7 @@ import HomeSearchScreen from "./screens/HomeSearchScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import BillsScreen from "./screens/BillsScreen";
 import SingleBillScreen from "./screens/SingleBillScreen";
+import ReferScreen from "./screens/ReferScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,7 @@ function App() {
           <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
           <Stack.Screen name="BillsScreen" component={BillsScreen} />
           <Stack.Screen name="SingleBillScreen" component={SingleBillScreen} />
+          <Stack.Screen name="ReferScreen" component={ReferScreen} />
         </Stack.Navigator>
       </NavigationContainer>
       <Toast />
