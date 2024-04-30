@@ -77,7 +77,6 @@ const ReferScreen = ({ navigation }) => {
       alert(error.message);
     }
   };
-
   useEffect(() => {
     if (alertClick) {
       Animated.timing(animation, {
@@ -150,6 +149,7 @@ const ReferScreen = ({ navigation }) => {
             </Text>
             <Text style={tw`text-white`}>
               By participating , you accept our
+              <Text style={tw`text-blue-500`}> terms and conditions</Text>
             </Text>
             <TouchableOpacity
               style={tw`flex flex-row items-center  mt-5 bg-[#02B386] rounded-lg gap-2 justify-center p-4`}
