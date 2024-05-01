@@ -55,20 +55,26 @@ const ProfileScreen = ({ navigation }) => {
         <View
           style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
         >
-          <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
+          <TouchableOpacity
+            style={tw`flex flex-row items-center gap-5`}
+            onPress={() => navigation.navigate("RedeemScreen")}
+          >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
               <FontAwesome5 name="wallet" size={15} color="white" />
             </View>
             <View>
-              <Text style={tw`text-white text-lg font-semibold`}>₹660.67</Text>
-              <Text style={tw`text-white text-xs`}>Wallet</Text>
+              <Text style={tw`text-white text-lg font-semibold`}>Redeem</Text>
+              <Text style={tw`text-white text-xs`}>xxxxxxxxx</Text>
             </View>
           </TouchableOpacity>
         </View>
         <View
           style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
         >
-          <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
+          <TouchableOpacity
+            style={tw`flex flex-row items-center gap-5`}
+            onPress={() => navigation.navigate("BillsScreen")}
+          >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
               <MaterialIcons name="receipt" size={15} color="white" />
             </View>
@@ -85,17 +91,55 @@ const ProfileScreen = ({ navigation }) => {
         <View
           style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
         >
-          <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
+          <TouchableOpacity
+            style={tw`flex flex-row items-center gap-5`}
+            onPress={() => navigation.navigate("UPIScreen")}
+          >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="receipt" size={15} color="white" />
+              <MaterialIcons name="money" size={15} color="white" />
             </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>
-                Bank Details
+                UPI Details
               </Text>
               <Text style={tw`text-white text-xs`}>
                 Bank & AutoPay Mandates
               </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+        >
+          <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
+            <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
+              <MaterialIcons name="call" size={15} color="white" />
+            </View>
+            <View>
+              <Text style={tw`text-white text-lg font-semibold`}>
+                Customer Support 24x7
+              </Text>
+              <Text style={tw`text-white text-xs`}>
+                Bank & AutoPay Mandates
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+        >
+          <TouchableOpacity
+            style={tw`flex flex-row items-center gap-5`}
+            onPress={() => navigation.navigate("NotificationScreen")}
+          >
+            <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
+              <MaterialIcons name="notifications" size={15} color="white" />
+            </View>
+            <View>
+              <Text style={tw`text-white text-lg font-semibold`}>
+                Notification
+              </Text>
+              <Text style={tw`text-white text-xs`}>Show all Notifications</Text>
             </View>
           </TouchableOpacity>
         </View>

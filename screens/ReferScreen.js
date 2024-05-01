@@ -108,9 +108,12 @@ const ReferScreen = ({ navigation }) => {
       <View
         style={tw`flex flex-row w-full items-center justify-between px-5 mt-5`}
       >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <AntDesign name="arrowleft" size={20} color="white" />
-        </TouchableOpacity>
+        <View style={tw`flex flex-row gap-5 items-center `}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <AntDesign name="arrowleft" size={20} color="white" />
+          </TouchableOpacity>
+          <Text style={tw`text-white text-lg font-semibold`}>Invite</Text>
+        </View>
         <TouchableOpacity onPress={() => setAlertClick(true)}>
           <AntDesign name="questioncircle" size={20} color="#9DE9D7" />
         </TouchableOpacity>
