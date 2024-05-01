@@ -19,7 +19,7 @@ const ProfileScreen = ({ navigation }) => {
       >
         <View>
           <View style={tw`flex-row gap-3 items-center`}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("UserScreen")}>
               <FontAwesome name="user-circle" size={40} color="white" />
             </TouchableOpacity>
             <View>
