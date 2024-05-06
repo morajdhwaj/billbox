@@ -17,7 +17,7 @@ const LoginScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={tw` `}>
+      <View style={tw`mt-10 `}>
         <Text style={tw`text-white text-2xl m-5 font-semibold `}>
           Enter your mobile number to get OTP
         </Text>
