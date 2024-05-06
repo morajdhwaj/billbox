@@ -4,7 +4,7 @@ import tw from "twrnc";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const NotificationScreen = () => {
+const NotificationScreen = ({ navigation }) => {
   return (
     <View style={tw`bg-black h-full`}>
       <View

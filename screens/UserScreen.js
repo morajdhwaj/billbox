@@ -3,7 +3,7 @@ import React from "react";
 import tw from "twrnc";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-const UserScreen = () => {
+const UserScreen = ({ navigation }) => {
   return (
     <View style={tw`bg-black h-full`}>
       <View
@@ -11,7 +11,7 @@ const UserScreen = () => {
       >
         <View style={tw`flex flex-row gap-5 items-center `}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <AntDesign name="arrowleft" size={20} color="white" />s
+            <AntDesign name="arrowleft" size={20} color="white" />
           </TouchableOpacity>
           <Text style={tw`text-white text-lg font-semibold`}>User Screen</Text>
         </View>

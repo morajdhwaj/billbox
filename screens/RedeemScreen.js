@@ -3,7 +3,7 @@ import React from "react";
 import tw from "twrnc";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-const RedeemScreen = () => {
+const RedeemScreen = ({ navigation }) => {
   return (
     <View style={tw`bg-black h-full`}>
       <View
