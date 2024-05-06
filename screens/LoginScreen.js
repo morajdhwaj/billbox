@@ -3,15 +3,8 @@ import React, { useState } from "react";
 import tw from "twrnc";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-const countries = [
-  { name: "United States", code: "US" },
-  { name: "United Kingdom", code: "UK" },
-  { name: "Canada", code: "CA" },
-  // Add more countries as needed
-];
 const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState(countries[0].code);
 
   return (
     <View style={tw`h-full bg-[#000]`}>
