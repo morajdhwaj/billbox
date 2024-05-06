@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { View, TextInput, Text, TouchableOpacity } from "react-native";
 import tw from "twrnc";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 const LoginOTPScreen = ({ navigation }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -39,19 +40,27 @@ const LoginOTPScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={tw`h-full bg-[#202832]`}>
+    <View style={tw`h-full bg-[#000]`}>
+      <View
+        style={tw`flex flex-row w-full items-center justify-between px-5 mt-5`}
+      >
+        <View style={tw`flex flex-row gap-5 items-center `}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <AntDesign name="arrowleft" size={20} color="white" />
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={tw`mt-10 `}>
-        <Text style={tw`text-[#9DE9D7] text-6xl m-5 font-bold `}>Verify</Text>
+        <Text style={tw`text-white text-2xl m-5 font-semibold `}>
+          Enter 4-digit code send to you at 8638398339
+        </Text>
       </View>
       <View style={tw` w-full py-5 rounded-xl `}>
-        <Text style={tw`text-[#565E6A] text-xl  ml-5 font-bold`}>
-          We have sent OTP to your number
-        </Text>
         <View style={tw`flex flex-row items-center justify-center mt-5 gap-5`}>
           {otp.map((digit, index) => (
             <TextInput
               key={index}
-              style={tw`bg-[#19202A] w-16 text-center text-4xl text-[#9DE9D7] font-bold rounded-lg`}
+              style={tw`bg-[#000] border border-[#9DE9D7] w-16 text-center text-4xl text-[#9DE9D7] font-bold rounded-lg`}
               keyboardType="numeric"
               maxLength={1}
               value={digit}
@@ -64,17 +73,25 @@ const LoginOTPScreen = ({ navigation }) => {
           ))}
         </View>
       </View>
-      <Text style={tw`text-[#565E6A]  self-center  mt-5 font-semibold`}>
-        Resend OTP?
-      </Text>
+
       <TouchableOpacity
         style={tw`bg-[#9DE9D7] mt-10 rounded-xl mx-5`}
         onPress={() => navigation.navigate("HomeScreen")}
       >
         <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
-          Submit
+          Verify
         </Text>
       </TouchableOpacity>
+      <View style={tw`flex items-center justify-center mt-5 flex-row `}>
+        <Text style={tw`text-white text-sm  font-semibold `}>
+          Did not receive a code!
+        </Text>
+        <TouchableOpacity>
+          <Text style={tw`text-[#9DE9D7] text-sm  font-semibold `}>
+            Resend OTP
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

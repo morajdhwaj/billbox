@@ -56,7 +56,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         )}
       </View>
-      <View style={tw`h-[10%] `}>
+      <View style={tw`h-[10%]`}>
         <HomeBottomTabs
           tab={tab}
           navigation={navigation}
