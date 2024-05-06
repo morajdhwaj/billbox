@@ -22,13 +22,13 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
               <Image
                 source={require("../../assets/images/home-active.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             ) : (
               <Image
                 source={require("../../assets/images/home.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             )}
           </View>
@@ -42,13 +42,13 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
               <Image
                 source={require("../../assets/images/bills-active.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             ) : (
               <Image
                 source={require("../../assets/images/bills.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             )}
           </View>
@@ -83,13 +83,13 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
               <Image
                 source={require("../../assets/images/reward-active.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             ) : (
               <Image
                 source={require("../../assets/images/reward.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             )}
           </View>
@@ -105,13 +105,13 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
               <Image
                 source={require("../../assets/images/warrant-active.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             ) : (
               <Image
                 source={require("../../assets/images/warrant.png")}
                 ImageBackground
-                style={tw`h-10 w-10 rounded-full`}
+                style={tw`h-12 w-12 rounded-full`}
               />
             )}
           </View>
