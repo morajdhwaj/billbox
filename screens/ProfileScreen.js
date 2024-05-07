@@ -17,11 +17,14 @@ const ProfileScreen = ({ navigation }) => {
       <View
         style={tw`flex flex-row w-full items-center justify-between p-5 border-b border-gray-500`}
       >
-        <View>
-          <View style={tw`flex-row gap-3 items-center`}>
-            <TouchableOpacity onPress={() => navigation.navigate("UserScreen")}>
-              <FontAwesome name="user-circle" size={40} color="white" />
-            </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("UserScreen")}
+          style={tw``}
+        >
+          <View style={tw`flex-row gap-3 items-center `}>
+            <View>
+              <FontAwesome name="user-circle" size={40} color="#9DE9D7" />
+            </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>
                 User Name
@@ -29,10 +32,10 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={tw`text-white text-xs`}>Account details</Text>
             </View>
           </View>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("UserScreen")}>
           <MaterialIcons name="keyboard-arrow-right" size={20} color="white" />
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={tw` flex gap-2`}>
         <View
@@ -40,7 +43,7 @@ const ProfileScreen = ({ navigation }) => {
         >
           <View style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <AntDesign name="gift" size={15} color="white" />
+              <AntDesign name="gift" size={20} color="#9DE9D7" />
             </View>
             <TouchableOpacity
               onPress={() => navigation.navigate("ReferScreen")}
@@ -60,7 +63,7 @@ const ProfileScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("RedeemScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <FontAwesome5 name="wallet" size={15} color="white" />
+              <FontAwesome5 name="wallet" size={20} color="#9DE9D7" />
             </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>Redeem</Text>
@@ -76,7 +79,7 @@ const ProfileScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("BillsScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="receipt" size={15} color="white" />
+              <MaterialIcons name="receipt" size={20} color="#9DE9D7" />
             </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>
@@ -96,7 +99,7 @@ const ProfileScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("UPIScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="money" size={15} color="white" />
+              <MaterialIcons name="money" size={20} color="#9DE9D7" />
             </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>
@@ -113,7 +116,7 @@ const ProfileScreen = ({ navigation }) => {
         >
           <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="call" size={15} color="white" />
+              <MaterialIcons name="call" size={20} color="#9DE9D7" />
             </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>
@@ -133,7 +136,7 @@ const ProfileScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("NotificationScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="notifications" size={15} color="white" />
+              <MaterialIcons name="notifications" size={20} color="#9DE9D7" />
             </View>
             <View>
               <Text style={tw`text-white text-lg font-semibold`}>

@@ -27,15 +27,15 @@ const LoginScreen = ({ navigation }) => {
   };
 
   const handleSubmit = () => {
-    // if (!country) {
-    //   // Show toast alert if country is not selected
-    //   Toast.show({
-    //     type: "error",
-    //     text1: "Error",
-    //     text2: "Please select a country",
-    //   });
-    //   return;
-    // }
+    if (!country) {
+      // Show toast alert if country is not selected
+      Toast.show({
+        type: "error",
+        text1: "Error",
+        text2: "Please select a country",
+      });
+      return;
+    }
     // Handle submission logic here
     navigation.navigate("LoginOTPScreen");
   };
@@ -58,11 +58,11 @@ const LoginScreen = ({ navigation }) => {
           </Text>
 
           <View style={tw` bg-black py-5 rounded-xl px-4`}>
-            <View style={tw`flex flex-row mx-5`}>
-              <Text style={tw`text-white text-lg  font-semibold w-[30%]`}>
+            <View style={tw`flex flex-row mx-5 mb-1`}>
+              <Text style={tw`text-white text-lg  font-semibold w-[35%]`}>
                 Country
               </Text>
-              <Text style={tw`text-white text-lg w-[70%] font-semibold`}>
+              <Text style={tw`text-white text-lg w-[650%] font-semibold`}>
                 Mobile number
               </Text>
             </View>
@@ -90,7 +90,7 @@ const LoginScreen = ({ navigation }) => {
               <View style={tw`flex  w-[70%]  px-2 `}>
                 <TextInput
                   ref={mobileNumberRef}
-                  style={tw`  text-white  font-semibold`}
+                  style={tw`  text-gray-400 text-lg`}
                   keyboardType="phone-pad"
                   onChangeText={setMobileNumber}
                   value={mobileNumber}

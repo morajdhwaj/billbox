@@ -88,6 +88,7 @@ const LoginOTPScreen = ({ navigation }) => {
         </Text>
         <TouchableOpacity>
           <Text style={tw`text-[#9DE9D7] text-sm  font-semibold `}>
+            {"  "}
             Resend OTP
           </Text>
         </TouchableOpacity>
