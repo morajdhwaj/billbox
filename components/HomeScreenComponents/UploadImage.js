@@ -4,8 +4,9 @@ import tw from "twrnc";
 import axios from "axios";
 import Toast from "react-native-toast-message";
 
-const UploadImage = ({ scannedImage, setScannedImage }) => {
+const UploadImage = ({ scannedImage, setScannedImage, setTab }) => {
   const [imageName, setImageName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const uploadFile = async () => {
     try {
@@ -27,6 +28,7 @@ const UploadImage = ({ scannedImage, setScannedImage }) => {
         },
         data: formData,
       };
+      setLoading(true);
 
       axios
         .request(options)
@@ -38,6 +40,8 @@ const UploadImage = ({ scannedImage, setScannedImage }) => {
             text1: response?.data?.message,
             visibilityTime: 2000,
           });
+          setLoading(false);
+          setTab("bills");
         })
         .catch(function (error) {
           console.error(error?.response?.data?.detail?.message, "error");
@@ -47,6 +51,7 @@ const UploadImage = ({ scannedImage, setScannedImage }) => {
             text1: error?.response?.data?.detail?.message,
             visibilityTime: 2000,
           });
+          setLoading(false);
         });
     } catch (error) {
       console.log(error);
@@ -71,14 +76,22 @@ const UploadImage = ({ scannedImage, setScannedImage }) => {
         </View>
       )}
       <View style={tw`m-5`}>
-        <TouchableOpacity
-          style={tw`bg-[#9DE9D7]  rounded-xl`}
-          onPress={uploadFile}
-        >
-          <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
-            Upload
-          </Text>
-        </TouchableOpacity>
+        {loading ? (
+          <View style={tw`bg-[#9DE9D7]  rounded-xl`}>
+            <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
+              Uploading...
+            </Text>
+          </View>
+        ) : (
+          <TouchableOpacity
+            style={tw`bg-[#9DE9D7]  rounded-xl`}
+            onPress={uploadFile}
+          >
+            <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
+              Upload
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

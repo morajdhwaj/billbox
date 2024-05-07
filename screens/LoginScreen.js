@@ -8,7 +8,7 @@ import Toast from "react-native-toast-message";
 const LoginScreen = ({ navigation }) => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [showCountry, setShowCountry] = useState(false);
-  const [countryCode, setCountryCode] = useState("FR");
+  const [countryCode, setCountryCode] = useState("");
   const [country, setCountry] = useState(null);
   const [withCountryNameButton, setWithCountryNameButton] = useState(false);
   const [withFlag, setWithFlag] = useState(true);
@@ -27,15 +27,15 @@ const LoginScreen = ({ navigation }) => {
   };
 
   const handleSubmit = () => {
-    if (!country) {
-      // Show toast alert if country is not selected
-      Toast.show({
-        type: "error",
-        text1: "Error",
-        text2: "Please select a country",
-      });
-      return;
-    }
+    // if (!country) {
+    //   // Show toast alert if country is not selected
+    //   Toast.show({
+    //     type: "error",
+    //     text1: "Error",
+    //     text2: "Please select a country",
+    //   });
+    //   return;
+    // }
     // Handle submission logic here
     navigation.navigate("LoginOTPScreen");
   };
@@ -58,9 +58,14 @@ const LoginScreen = ({ navigation }) => {
           </Text>
 
           <View style={tw` bg-black py-5 rounded-xl px-4`}>
-            <Text style={tw`text-white text-xl  font-semibold`}>
-              Mobile number
-            </Text>
+            <View style={tw`flex flex-row mx-5`}>
+              <Text style={tw`text-white text-lg  font-semibold w-[30%]`}>
+                Country
+              </Text>
+              <Text style={tw`text-white text-lg w-[70%] font-semibold`}>
+                Mobile number
+              </Text>
+            </View>
             <View
               style={tw`border border-gray-600 rounded-xl flex flex-row items-center`}
             >
@@ -82,7 +87,7 @@ const LoginScreen = ({ navigation }) => {
                 />
                 {country && <Text>+{country?.callingCode}</Text>}
               </View>
-              <View style={tw`flex  w-[70%]  px-5 `}>
+              <View style={tw`flex  w-[70%]  px-2 `}>
                 <TextInput
                   ref={mobileNumberRef}
                   style={tw`  text-white  font-semibold`}

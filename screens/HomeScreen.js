@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={tw`h-[90%]`}>
         {tab === "home" && (
           <View>
-            <HomeComponent setTab={setTab} navigation={navigation} />
+            <HomeComponent navigation={navigation} />
           </View>
         )}
         {tab === "bills" && (
@@ -39,6 +39,7 @@ const HomeScreen = ({ navigation }) => {
           <View>
             {scannedImage && (
               <UploadImage
+                setTab={setTab}
                 scannedImage={scannedImage}
                 setScannedImage={setScannedImage}
               />
@@ -57,14 +58,7 @@ const HomeScreen = ({ navigation }) => {
         )}
       </View>
       <View style={tw`h-[10%]`}>
-        <HomeBottomTabs
-          tab={tab}
-          navigation={navigation}
-          scannedImage={scannedImage}
-          setScannedImage={setScannedImage}
-          scanDocument={scanDocument}
-          setTab={setTab}
-        />
+        <HomeBottomTabs setTab={setTab} tab={tab} scanDocument={scanDocument} />
       </View>
     </View>
   );

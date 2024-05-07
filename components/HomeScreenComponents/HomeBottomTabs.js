@@ -15,7 +15,7 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
 
   return (
     <View style={tw`px-5 bg-[#202020] flex flex-row justify-between  h-full`}>
-      <TouchableOpacity onPress={() => setTab("home")} style={tw}>
+      <TouchableOpacity onPress={() => setTab("home")}>
         <View style={tw`flex items-center justify-center`}>
           <View>
             {tab === "home" ? (

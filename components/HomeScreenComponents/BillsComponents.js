@@ -74,7 +74,8 @@ const BillsComponents = ({ navigation, setTab }) => {
     );
   }
 
-  console.log(bills, "bills");
+  console.log(bills[0].url, "bills");
+  console.log(bills[0].url, "dsdsdsdsd");
 
   return (
     <View style={tw`bg-[#121212] `}>
