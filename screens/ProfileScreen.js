@@ -7,6 +7,8 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 const ProfileScreen = ({ navigation }) => {
+  const [logOut, setLogOut] = useState(false);
+
   return (
     <View style={tw`bg-black h-full`}>
       <View style={tw`flex flex-row w-full items-center px-5 mt-5`}>
@@ -39,7 +41,7 @@ const ProfileScreen = ({ navigation }) => {
       </View>
       <View style={tw` flex gap-2`}>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
         >
           <View style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
@@ -56,7 +58,7 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
@@ -72,7 +74,7 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
@@ -92,7 +94,7 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
@@ -112,7 +114,7 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
         >
           <TouchableOpacity style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
@@ -129,7 +131,7 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 p-5`}
+          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
@@ -145,6 +147,57 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={tw`text-white text-xs`}>Show all Notifications</Text>
             </View>
           </TouchableOpacity>
+        </View>
+        <View>
+          {logOut ? (
+            <View style={tw` px-5 pb-4 `}>
+              <View>
+                <Text style={tw`text-xl font-semibold text-white`}>
+                  Logout?
+                </Text>
+                <Text style={tw` text-white`}>
+                  Are you sure want to logout?
+                </Text>
+              </View>
+              <View style={tw`m-2 mx-5 flex flex-row gap-2`}>
+                <TouchableOpacity
+                  style={tw`bg-[#00B486]  rounded-lg w-1/2`}
+                  onPress={() => setLogOut(false)}
+                >
+                  <Text style={tw`text-center p-2`}>Log out</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={tw`bg-[#00B486]  rounded-lg w-1/2`}
+                  onPress={() => setLogOut(false)}
+                >
+                  <Text style={tw`text-center p-2`}>Cancel</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          ) : (
+            <View
+              style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+            >
+              <TouchableOpacity
+                style={tw`flex flex-row items-center gap-5`}
+                onPress={() => setLogOut(true)}
+              >
+                <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
+                  <MaterialIcons
+                    name="power-settings-new"
+                    size={20}
+                    color="#9DE9D7"
+                  />
+                </View>
+                <View>
+                  <Text style={tw`text-white text-lg font-semibold`}>
+                    Log Out
+                  </Text>
+                  <Text style={tw`text-white text-xs`}>zxzxzxzx</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          )}
         </View>
       </View>
     </View>
