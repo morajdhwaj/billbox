@@ -19,6 +19,8 @@ import NotificationScreen from "./screens/NotificationScreen";
 import RedeemScreen from "./screens/RedeemScreen";
 import UPIScreen from "./screens/UPIScreen";
 import UserScreen from "./screens/UserScreen";
+import SupportScreen from "./screens/SupportScreen";
+import ContactUsScreen from "./screens/ContactUsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +43,8 @@ function App() {
           <Stack.Screen name="RedeemScreen" component={RedeemScreen} />
           <Stack.Screen name="UPIScreen" component={UPIScreen} />
           <Stack.Screen name="UserScreen" component={UserScreen} />
+          <Stack.Screen name="SupportScreen" component={SupportScreen} />
+          <Stack.Screen name="ContactUsScreen" component={ContactUsScreen} />
           <Stack.Screen
             name="NotificationScreen"
             component={NotificationScreen}

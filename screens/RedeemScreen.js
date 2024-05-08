@@ -16,7 +16,22 @@ const RedeemScreen = ({ navigation }) => {
           <Text style={tw`text-white text-lg font-semibold`}>Redeem</Text>
         </View>
       </View>
-      <View style={tw` mt-10 `}></View>
+      <View style={tw` mt-10 flex  items-center    w-full  `}>
+        <View style={tw` h-[85%] flex items-center justify-center`}>
+          <Text style={tw`text-[#04d8a0] text-5xl `}>₹ 56.0</Text>
+          <Text style={tw`text-white  text-center `}>Reward Balance</Text>
+        </View>
+        <View style={tw`mx-5 w-full`}>
+          <TouchableOpacity
+            style={tw`bg-[#04d8a0] rounded-lg mx-5`}
+            onPress={() => navigation.navigate("ContactUsScreen")}
+          >
+            <Text style={tw`text-center p-2 text-white text-lg font-semibold`}>
+              Withdraw
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };

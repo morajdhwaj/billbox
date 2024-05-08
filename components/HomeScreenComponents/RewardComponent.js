@@ -3,7 +3,7 @@ import React from "react";
 import tw from "twrnc";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-const RewardComponent = ({ setTab }) => {
+const RewardComponent = ({ setTab, navigation }) => {
   return (
     <View style={tw`bg-black`}>
       <View
@@ -16,7 +16,7 @@ const RewardComponent = ({ setTab }) => {
           <Text style={tw`text-white text-lg font-semibold`}>Reward</Text>
         </View>
       </View>
-      <View style={tw` mt-10 `}></View>
+      <View style={tw` mt-10`}></View>
     </View>
   );
 };

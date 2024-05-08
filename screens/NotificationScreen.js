@@ -33,11 +33,11 @@ const NotificationScreen = ({ navigation }) => {
               <Text style={tw`text-white text-lg font-semibold`}>
                 Panasonic-electronic
               </Text>
-
-              <Text style={tw`text-[11px] text-white`}>12 days ago </Text>
               <Text style={tw`text-[11px] text-white`}>
                 Lorem Ipsum is simply dummy text
               </Text>
+
+              <Text style={tw`text-[11px] text-white`}>12 days ago </Text>
             </View>
           </View>
           <View style={tw`flex items-center `}>

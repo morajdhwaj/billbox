@@ -60,7 +60,7 @@ const LoginOTPScreen = ({ navigation }) => {
           {otp.map((digit, index) => (
             <TextInput
               key={index}
-              style={tw`bg-[#000] border border-[#9DE9D7] w-16 text-center text-4xl text-[#9DE9D7] font-bold rounded-lg`}
+              style={tw`bg-[#000] border border-[#04d8a0] w-16 text-center text-4xl text-[#04d8a0] font-bold rounded-lg`}
               keyboardType="numeric"
               maxLength={1}
               value={digit}
@@ -75,7 +75,7 @@ const LoginOTPScreen = ({ navigation }) => {
       </View>
 
       <TouchableOpacity
-        style={tw`bg-[#9DE9D7] mt-10 rounded-xl mx-5`}
+        style={tw`bg-[#04d8a0] mt-10 rounded-xl mx-5`}
         onPress={() => navigation.navigate("HomeScreen")}
       >
         <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
@@ -87,7 +87,7 @@ const LoginOTPScreen = ({ navigation }) => {
           Did not receive a code!
         </Text>
         <TouchableOpacity>
-          <Text style={tw`text-[#9DE9D7] text-sm  font-semibold `}>
+          <Text style={tw`text-[#04d8a0] text-sm  font-semibold `}>
             {"  "}
             Resend OTP
           </Text>

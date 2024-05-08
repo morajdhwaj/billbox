@@ -89,13 +89,13 @@ const BillsScreen = ({ navigation }) => {
         </View>
         <View style={tw`flex flex-row items-center gap-5`}>
           <TextInput
-            style={tw`   text-white  w-40 border border-[#9DE9D7] h-10 px-4  rounded-full`}
+            style={tw`   text-white  w-40 border border-[#04d8a0] h-10 px-4  rounded-full`}
             placeholder="Search bills"
             placeholderTextColor="#999999"
             maxLength={10}
           />
           <TouchableOpacity>
-            <AntDesign name="filter" size={25} color="#9DE9D7" />
+            <AntDesign name="filter" size={25} color="#04d8a0" />
           </TouchableOpacity>
         </View>
       </View>
@@ -120,7 +120,7 @@ const BillsScreen = ({ navigation }) => {
                     <Text style={tw`text-white text-lg font-semibold`}>
                       Panasonic-electronic
                     </Text>
-                    <Ionicons name="share-social" size={20} color="#9DE9D7" />
+                    <Ionicons name="share-social" size={20} color="#04d8a0" />
                   </View>
                   <View>
                     <Text style={tw`text-[11px] text-white`}>
