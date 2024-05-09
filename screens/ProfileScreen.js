@@ -178,27 +178,65 @@ const ProfileScreen = ({ navigation }) => {
               </View>
             </View>
           ) : (
-            <View
-              style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
-            >
-              <TouchableOpacity
-                style={tw`flex flex-row items-center gap-5`}
-                onPress={() => setLogOut(true)}
+            <View style={tw`flex gap-2`}>
+              <View
+                style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
               >
-                <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-                  <MaterialIcons
-                    name="power-settings-new"
-                    size={20}
-                    color="#04d8a0"
-                  />
+                <TouchableOpacity
+                  style={tw`flex flex-row items-center gap-5`}
+                  onPress={() => setLogOut(true)}
+                >
+                  <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
+                    <MaterialIcons
+                      name="power-settings-new"
+                      size={20}
+                      color="#04d8a0"
+                    />
+                  </View>
+                  <View>
+                    <Text style={tw`text-white text-lg font-semibold`}>
+                      Log Out
+                    </Text>
+                    <Text style={tw`text-white text-xs`}>zxzxzxzx</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+              <View style={tw`flex flex-row justify-between   px-5 pb-4 pt-3`}>
+                <View
+                  style={tw`flex flex-row items-center justify-between gap-5 mx-5  w-[90%]`}
+                >
+                  <TouchableOpacity
+                    style={tw`flex flex-row gap-2 items-center justify-center`}
+                  >
+                    <Text style={tw`text-gray-400 text-xs`}>About Us</Text>
+                    <MaterialIcons
+                      name="keyboard-arrow-right"
+                      size={15}
+                      color="white"
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={tw`flex flex-row gap-2 items-center justify-center`}
+                  >
+                    <Text style={tw`text-gray-400 text-xs`}>Charges</Text>
+                    <MaterialIcons
+                      name="keyboard-arrow-right"
+                      size={15}
+                      color="white"
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={tw`flex flex-row gap-2 items-center justify-center`}
+                  >
+                    <Text style={tw`text-gray-400 text-xs`}>App v2.1</Text>
+                    <MaterialIcons
+                      name="keyboard-arrow-right"
+                      size={15}
+                      color="white"
+                    />
+                  </TouchableOpacity>
                 </View>
-                <View>
-                  <Text style={tw`text-white text-lg font-semibold`}>
-                    Log Out
-                  </Text>
-                  <Text style={tw`text-white text-xs`}>zxzxzxzx</Text>
-                </View>
-              </TouchableOpacity>
+              </View>
             </View>
           )}
         </View>
