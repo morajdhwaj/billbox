@@ -115,7 +115,7 @@ const ReferScreen = ({ navigation }) => {
           <Text style={tw`text-white text-lg font-semibold`}>Invite</Text>
         </View>
         <TouchableOpacity onPress={() => setAlertClick(true)}>
-          <AntDesign name="questioncircle" size={20} color="#04d8a0" />
+          <AntDesign name="questioncircle" size={20} color="#00B386" />
         </TouchableOpacity>
       </View>
       <View style={tw` flex items-center mt-5`}>
@@ -155,7 +155,7 @@ const ReferScreen = ({ navigation }) => {
               <Text style={tw`text-blue-500`}> terms and conditions</Text>
             </Text>
             <TouchableOpacity
-              style={tw`flex flex-row items-center  mt-5 bg-[#04d8a0] rounded-lg gap-2 justify-center p-4`}
+              style={tw`flex flex-row items-center  mt-5 bg-[#00B386] rounded-lg gap-2 justify-center p-4`}
               onPress={() => setAlertClick(false)}
             >
               <Text style={tw` text-center  text-white`}>OKAY</Text>
@@ -171,9 +171,9 @@ const ReferScreen = ({ navigation }) => {
               style={tw`flex flex-row items-center  justify-center gap-2`}
               onPress={onShare}
             >
-              <Ionicons name="share-social" size={25} color="#04d8a0" />
+              <Ionicons name="share-social" size={25} color="#00B386" />
 
-              <Text style={tw`text-[#04d8a0]  `}>Share invite link</Text>
+              <Text style={tw`text-[#00B386]  `}>Share invite link</Text>
             </TouchableOpacity>
             <View style={tw`w-full p-5  flex  gap-4`}>
               <TouchableOpacity
@@ -187,7 +187,7 @@ const ReferScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={tw`flex flex-row items-center  bg-[#04d8a0] rounded-lg gap-2 justify-center p-2`}
+                style={tw`flex flex-row items-center  bg-[#00B386] rounded-lg gap-2 justify-center p-2`}
                 onPress={whatsAppMessage}
               >
                 <FontAwesome name="whatsapp" size={23} color="white" />

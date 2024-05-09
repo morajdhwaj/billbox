@@ -61,9 +61,9 @@ const LoginOTPScreen = ({ navigation }) => {
             <TextInput
               key={index}
               style={[
-                tw`bg-[#000] w-16 text-center text-4xl text-[#04d8a0] font-bold rounded-lg`,
+                tw`bg-[#000] w-16 text-center text-4xl text-white  rounded-lg`,
                 {
-                  borderColor: !digit ? "#808080" : "#04d8a0",
+                  borderColor: !digit ? "#808080" : "#85ebd0",
                   borderWidth: 1,
                 },
               ]}
@@ -81,19 +81,19 @@ const LoginOTPScreen = ({ navigation }) => {
       </View>
 
       <TouchableOpacity
-        style={tw`bg-[#04d8a0] mt-10 rounded-xl mx-5`}
+        style={tw`bg-[#00B386] mt-10 rounded-lg mx-5`}
         onPress={() => navigation.navigate("HomeScreen")}
       >
-        <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
+        <Text style={tw`text-white text-2xl self-center font-semibold py-2 `}>
           Verify
         </Text>
       </TouchableOpacity>
-      <View style={tw`flex items-center justify-center mt-5 flex-row `}>
+      <View style={tw`flex items-center justify-center mt-5 flex-row  gap-1`}>
         <Text style={tw`text-white text-sm  font-semibold `}>
           Did not receive a code!
         </Text>
         <TouchableOpacity>
-          <Text style={tw`text-[#04d8a0] text-sm  font-semibold `}>
+          <Text style={tw`text-[#00B386] text-sm  font-semibold `}>
             Resend OTP
           </Text>
         </TouchableOpacity>

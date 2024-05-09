@@ -96,7 +96,7 @@ const BillsComponents = ({ navigation, setTab }) => {
             maxLength={10}
           />
           <TouchableOpacity>
-            <AntDesign name="filter" size={25} color="#04d8a0" />
+            <AntDesign name="filter" size={25} color="#00B386" />
           </TouchableOpacity>
         </View>
       </View>

@@ -21,6 +21,7 @@ import UPIScreen from "./screens/UPIScreen";
 import UserScreen from "./screens/UserScreen";
 import SupportScreen from "./screens/SupportScreen";
 import ContactUsScreen from "./screens/ContactUsScreen";
+import AboutUsScreen from "./screens/AboutUsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,7 @@ function App() {
           <Stack.Screen name="UserScreen" component={UserScreen} />
           <Stack.Screen name="SupportScreen" component={SupportScreen} />
           <Stack.Screen name="ContactUsScreen" component={ContactUsScreen} />
+          <Stack.Screen name="AboutUsScreen" component={AboutUsScreen} />
           <Stack.Screen
             name="NotificationScreen"
             component={NotificationScreen}

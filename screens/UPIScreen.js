@@ -31,14 +31,14 @@ const UPIScreen = ({ navigation }) => {
               12332323@upi
             </Text>
             <View style={tw`flex flex-row gap-1 items-center`}>
-              <MaterialIcons name="verified" size={15} color="#04d8a0" />
+              <MaterialIcons name="verified" size={15} color="#00B386" />
               <Text style={tw`text-white text-sm font-semibold`}>Verified</Text>
             </View>
           </View>
         </View>
         {/* <View style={tw` w-full`}>
           <TouchableOpacity
-            style={tw`border border-[#04d8a0] rounded-lg mx-5`}
+            style={tw`border border-[#00B386] rounded-lg mx-5`}
             onPress={() => navigation.navigate("ContactUsScreen")}
           >
             <Text style={tw`text-center p-2 text-white text-lg font-semibold`}>

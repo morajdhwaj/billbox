@@ -77,14 +77,14 @@ const UploadImage = ({ scannedImage, setScannedImage, setTab }) => {
       )}
       <View style={tw`m-5`}>
         {loading ? (
-          <View style={tw`bg-[#04d8a0]  rounded-xl`}>
+          <View style={tw`bg-[#00B386]  rounded-xl`}>
             <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
               Uploading...
             </Text>
           </View>
         ) : (
           <TouchableOpacity
-            style={tw`bg-[#04d8a0]  rounded-xl`}
+            style={tw`bg-[#00B386]  rounded-xl`}
             onPress={uploadFile}
           >
             <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>

@@ -1,13 +1,23 @@
-import { View, Text, TextInput, TouchableOpacity, Share } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Share,
+  Modal,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import tw from "twrnc";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import LogoutModal from "../components/Modals/LogoutModal";
 
 const ProfileScreen = ({ navigation }) => {
-  const [logOut, setLogOut] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <View style={tw`bg-black h-full`}>
@@ -25,9 +35,9 @@ const ProfileScreen = ({ navigation }) => {
         >
           <View style={tw`flex-row gap-3 items-center `}>
             <View>
-              <FontAwesome name="user-circle" size={40} color="#04d8a0" />
+              <FontAwesome name="user-circle" size={40} color="#00B386" />
             </View>
-            <View>
+            <View style={tw`flex gap-1`}>
               <Text style={tw`text-white text-lg font-semibold`}>
                 User Name
               </Text>
@@ -39,13 +49,13 @@ const ProfileScreen = ({ navigation }) => {
           <MaterialIcons name="keyboard-arrow-right" size={20} color="white" />
         </TouchableOpacity>
       </View>
-      <View style={tw` flex gap-2`}>
+      <ScrollView style={tw` flex gap-2`}>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
         >
           <View style={tw`flex flex-row items-center gap-5`}>
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <AntDesign name="gift" size={20} color="#04d8a0" />
+              <AntDesign name="gift" size={20} color="#00B386" />
             </View>
             <TouchableOpacity
               onPress={() => navigation.navigate("ReferScreen")}
@@ -58,32 +68,32 @@ const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
             onPress={() => navigation.navigate("RedeemScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <FontAwesome5 name="wallet" size={20} color="#04d8a0" />
+              <FontAwesome5 name="wallet" size={20} color="#00B386" />
             </View>
-            <View>
+            <View style={tw`flex gap-1`}>
               <Text style={tw`text-white text-lg font-semibold`}>Redeem</Text>
               <Text style={tw`text-white text-xs`}>xxxxxxxxx</Text>
             </View>
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
             onPress={() => navigation.navigate("BillsScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="receipt" size={20} color="#04d8a0" />
+              <MaterialIcons name="receipt" size={20} color="#00B386" />
             </View>
-            <View>
+            <View style={tw`flex gap-1`}>
               <Text style={tw`text-white text-lg font-semibold`}>
                 All Bills
               </Text>
@@ -94,16 +104,16 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
             onPress={() => navigation.navigate("UPIScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="money" size={20} color="#04d8a0" />
+              <MaterialIcons name="money" size={20} color="#00B386" />
             </View>
-            <View>
+            <View style={tw`flex gap-1`}>
               <Text style={tw`text-white text-lg font-semibold`}>
                 UPI Details
               </Text>
@@ -114,16 +124,16 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
             onPress={() => navigation.navigate("SupportScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="call" size={20} color="#04d8a0" />
+              <MaterialIcons name="call" size={20} color="#00B386" />
             </View>
-            <View>
+            <View style={tw`flex gap-1`}>
               <Text style={tw`text-white text-lg font-semibold`}>
                 Customer Support 24x7
               </Text>
@@ -134,16 +144,16 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View
-          style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
         >
           <TouchableOpacity
             style={tw`flex flex-row items-center gap-5`}
             onPress={() => navigation.navigate("NotificationScreen")}
           >
             <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-              <MaterialIcons name="notifications" size={20} color="#04d8a0" />
+              <MaterialIcons name="notifications" size={20} color="#00B386" />
             </View>
-            <View>
+            <View style={tw`flex gap-1`}>
               <Text style={tw`text-white text-lg font-semibold`}>
                 Notification
               </Text>
@@ -151,96 +161,31 @@ const ProfileScreen = ({ navigation }) => {
             </View>
           </TouchableOpacity>
         </View>
-        <View>
-          {logOut ? (
-            <View style={tw` px-5 pb-4 `}>
-              <View>
-                <Text style={tw`text-xl font-semibold text-white`}>
-                  Logout?
-                </Text>
-                <Text style={tw` text-white`}>
-                  Are you sure want to logout?
-                </Text>
-              </View>
-              <View style={tw`m-2 mx-5 flex flex-row gap-2`}>
-                <TouchableOpacity
-                  style={tw`bg-[#04d8a0]  rounded-lg w-1/2`}
-                  onPress={() => setLogOut(false)}
-                >
-                  <Text style={tw`text-center p-2 text-white`}>Log out</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={tw`bg-[#04d8a0]  rounded-lg w-1/2`}
-                  onPress={() => setLogOut(false)}
-                >
-                  <Text style={tw`text-center p-2 text-white`}>Cancel</Text>
-                </TouchableOpacity>
-              </View>
+        <View
+          style={tw`flex flex-row justify-between  border-b border-[#1d1d1d] px-5 pb-4 pt-3`}
+        >
+          <TouchableOpacity
+            style={tw`flex flex-row items-center gap-5`}
+            onPress={() => setModalVisible(true)}
+          >
+            <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
+              <MaterialIcons
+                name="power-settings-new"
+                size={20}
+                color="#00B386"
+              />
             </View>
-          ) : (
-            <View style={tw`flex gap-2`}>
-              <View
-                style={tw`flex flex-row justify-between  border-b border-gray-900 px-5 pb-4 pt-3`}
-              >
-                <TouchableOpacity
-                  style={tw`flex flex-row items-center gap-5`}
-                  onPress={() => setLogOut(true)}
-                >
-                  <View style={tw`bg-[#1d1d1d] p-2 rounded-full`}>
-                    <MaterialIcons
-                      name="power-settings-new"
-                      size={20}
-                      color="#04d8a0"
-                    />
-                  </View>
-                  <View>
-                    <Text style={tw`text-white text-lg font-semibold`}>
-                      Log Out
-                    </Text>
-                    <Text style={tw`text-white text-xs`}>zxzxzxzx</Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
-              <View style={tw`flex flex-row justify-between   px-5 pb-4 pt-3`}>
-                <View
-                  style={tw`flex flex-row items-center justify-between gap-5 mx-5  w-[90%]`}
-                >
-                  <TouchableOpacity
-                    style={tw`flex flex-row gap-2 items-center justify-center`}
-                  >
-                    <Text style={tw`text-gray-400 text-xs`}>About Us</Text>
-                    <MaterialIcons
-                      name="keyboard-arrow-right"
-                      size={15}
-                      color="white"
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={tw`flex flex-row gap-2 items-center justify-center`}
-                  >
-                    <Text style={tw`text-gray-400 text-xs`}>Charges</Text>
-                    <MaterialIcons
-                      name="keyboard-arrow-right"
-                      size={15}
-                      color="white"
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={tw`flex flex-row gap-2 items-center justify-center`}
-                  >
-                    <Text style={tw`text-gray-400 text-xs`}>App v2.1</Text>
-                    <MaterialIcons
-                      name="keyboard-arrow-right"
-                      size={15}
-                      color="white"
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
+            <View style={tw`flex gap-1`}>
+              <Text style={tw`text-white text-lg font-semibold`}>Log Out</Text>
+              <Text style={tw`text-white text-xs`}>zxzxzxzx</Text>
             </View>
-          )}
+          </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
+      <LogoutModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </View>
   );
 };

@@ -58,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
           </Text>
 
           <View style={tw` bg-black py-5 rounded-xl px-4`}>
-            <View style={tw`flex flex-row mx-5 mb-1`}>
+            <View style={tw`flex flex-row mx-5 mb-2`}>
               <Text style={tw`text-white text-lg  font-semibold w-[35%]`}>
                 Country
               </Text>
@@ -102,7 +102,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
         <View style={tw`mx-5`}>
           <TouchableOpacity
-            style={tw`bg-[#04d8a0] mt-10 rounded-xl`}
+            style={tw`bg-[#00B386] mt-10 rounded-xl`}
             onPress={handleSubmit}
           >
             <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>

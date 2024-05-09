@@ -17,40 +17,46 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
 
   return (
     <View style={tw`px-5 bg-[#202020] flex flex-row justify-between  h-full`}>
-      <TouchableOpacity onPress={() => setTab("home")}>
-        <View style={tw`flex items-center justify-center`}>
+      <TouchableOpacity
+        onPress={() => setTab("home")}
+        style={tw`h-full flex items-center justify-center`}
+      >
+        <View style={tw`flex items-center justify-center gap-1 `}>
           <View>
             {tab === "home" ? (
               <Image
                 source={require("../../assets/images/home-active.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             ) : (
               <Image
                 source={require("../../assets/images/home.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             )}
           </View>
           <Text style={tw`${tab == "home" && "text-white"} text-xs`}>Home</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setTab("bills")}>
-        <View style={tw`flex items-center justify-center`}>
+      <TouchableOpacity
+        onPress={() => setTab("bills")}
+        style={tw`h-full flex items-center justify-center`}
+      >
+        <View style={tw`flex items-center justify-center gap-1`}>
           <View>
             {tab === "bills" ? (
               <Image
                 source={require("../../assets/images/bills-active.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             ) : (
               <Image
                 source={require("../../assets/images/bills.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             )}
           </View>
@@ -66,32 +72,35 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
               <Image
                 source={require("../../assets/images/add-active.png")}
                 ImageBackground
-                style={tw`h-24 w-24 rounded-full`}
+                style={tw`h-16 w-16 rounded-full`}
               />
             ) : (
               <Image
                 source={require("../../assets/images/add.png")}
                 ImageBackground
-                style={tw`h-24 w-24 rounded-full`}
+                style={tw`h-16 w-16 rounded-full`}
               />
             )}
           </View>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setTab("reward")}>
-        <View style={tw`flex items-center justify-center`}>
+      <TouchableOpacity
+        onPress={() => setTab("reward")}
+        style={tw`h-full flex items-center justify-center`}
+      >
+        <View style={tw`flex items-center justify-center gap-1`}>
           <View>
             {tab === "reward" ? (
               <Image
                 source={require("../../assets/images/reward-active.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             ) : (
               <Image
                 source={require("../../assets/images/reward.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             )}
           </View>
@@ -100,20 +109,23 @@ const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
           </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setTab("warrant")}>
-        <View style={tw`flex items-center justify-center`}>
+      <TouchableOpacity
+        onPress={() => setTab("warrant")}
+        style={tw`h-full flex items-center justify-center`}
+      >
+        <View style={tw`flex items-center justify-center gap-1`}>
           <View>
             {tab === "warrant" ? (
               <Image
                 source={require("../../assets/images/warrant-active.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             ) : (
               <Image
                 source={require("../../assets/images/warrant.png")}
                 ImageBackground
-                style={tw`h-12 w-12 rounded-full`}
+                style={tw`h-6 w-6 `}
               />
             )}
           </View>

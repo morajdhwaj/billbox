@@ -51,7 +51,7 @@ const SupportScreen = ({ navigation }) => {
           <Text style={tw`text-xl font-semibold text-white`}>
             We are here to help you with anything and everything on billbox
           </Text>
-          <Text style={tw` text-white text-xs`}>
+          <Text style={tw` text-[#cbcbcb] text-xs`}>
             What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
             printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s.
@@ -70,11 +70,11 @@ const SupportScreen = ({ navigation }) => {
             ))}
           </View>
           <View style={tw` p-4 mt-5 flex gap-4`}>
-            <Text style={tw`text-white text-center font-semibold text-lg`}>
+            <Text style={tw`text-white text-center font-semibold text-sm`}>
               Still stuck? Help us a mail away
             </Text>
             <TouchableOpacity
-              style={tw`bg-[#04d8a0] rounded-lg`}
+              style={tw`bg-[#00B386] rounded-lg`}
               onPress={() => navigation.navigate("ContactUsScreen")}
             >
               <Text

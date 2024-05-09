@@ -30,43 +30,39 @@ const ContactUsScreen = ({ navigation }) => {
           </Text>
         </View>
         <View style={tw` mt-10 flex gap-5`}>
-          <View style={tw`flex  w-full px-2 `}>
-            <Text style={tw`text-white text-lg  font-semibold `}>Name</Text>
+          <View style={tw`flex  w-full px-2 gap-1 `}>
+            <Text style={tw`text-white text-lg  font-medium `}>Name</Text>
             <TextInput
-              style={tw`  text-gray-400 text-lg border border-gray-600 rounded-lg`}
+              style={tw`  text-white px-4 text-lg border border-[#1d1d1d] rounded-lg`}
             />
           </View>
-          <View style={tw`flex  w-full px-2 `}>
-            <Text style={tw`text-white text-lg  font-semibold `}>
+          <View style={tw`flex  w-full px-2 gap-1 `}>
+            <Text style={tw`text-white text-lg  font-medium `}>
               Mobile number
             </Text>
             <TextInput
-              style={tw`  text-gray-400 text-lg border border-gray-600 rounded-lg`}
+              style={tw`  text-white px-4 text-lg border border-[#1d1d1d]  rounded-lg`}
               maxLength={10}
               keyboardType="phone-pad"
             />
           </View>
-          <View style={tw`flex  w-full px-2 `}>
-            <Text style={tw`text-white text-lg  font-semibold `}>
-              Email Id{" "}
-            </Text>
+          <View style={tw`flex  w-full px-2 gap-1 `}>
+            <Text style={tw`text-white text-lg  font-medium `}>Email ID</Text>
             <TextInput
-              style={tw`  text-gray-400 text-lg border border-gray-600 rounded-lg`}
+              style={tw`  text-white px-4 text-lg border border-[#1d1d1d] rounded-lg`}
               maxLength={10}
               keyboardType="email-address"
             />
           </View>
-          <View style={tw`flex  w-full px-2 `}>
-            <Text style={tw`text-white text-lg  font-semibold `}>
-              Email Id{" "}
-            </Text>
+          <View style={tw`flex  w-full px-2 gap-1 `}>
+            <Text style={tw`text-white text-lg  font-medium `}>Message</Text>
             <TextInput
-              style={tw`  text-gray-400 text-lg border border-gray-600 rounded-lg h-32 `}
+              style={tw`  text-white px-4 text-lg border border-[#1d1d1d] rounded-lg h-32 `}
               multiline
               placeholder="Type something here.."
             />
           </View>
-          <TouchableOpacity style={tw`bg-[#04d8a0] rounded-lg`}>
+          <TouchableOpacity style={tw`bg-[#00B386] rounded-lg mt-5`}>
             <Text style={tw`text-center p-2 text-white text-lg font-semibold`}>
               Submit
             </Text>

@@ -87,11 +87,11 @@ const IntroScreen = ({ navigation }) => {
   };
 
   const renderNextButton = () => {
-    return <Ionicons name="arrow-forward" size={30} color="#04d8a0" />;
+    return <Ionicons name="arrow-forward" size={30} color="#00B386" />;
   };
   const renderDoneButton = () => {
     return (
-      <View style={tw`bg-[#04d8a0] rounded-full`}>
+      <View style={tw`bg-[#00B386] rounded-full`}>
         <Text style={tw`px-5 py-2 text-black `}>Get Started</Text>
       </View>
     );
