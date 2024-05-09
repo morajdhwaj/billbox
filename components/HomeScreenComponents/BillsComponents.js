@@ -90,7 +90,7 @@ const BillsComponents = ({ navigation, setTab }) => {
         </View>
         <View style={tw`flex flex-row items-center gap-5`}>
           <TextInput
-            style={tw`   text-white  w-40 border border-[#04d8a0] h-10 px-4  rounded-full`}
+            style={tw`   text-white  text-xs w-40 border border-[#444] h-9 px-4  rounded-full`}
             placeholder="Search bills"
             placeholderTextColor="#999999"
             maxLength={10}
@@ -126,11 +126,11 @@ const BillsComponents = ({ navigation, setTab }) => {
                       typesetting industry.
                     </Text>
                   </View>
-                  <View style={tw`flex flex-row gap-2`}>
-                    <Text style={tw`text-[10px] text-white`}>01-02-2024 </Text>
+                  <View style={tw`flex flex-row gap-2 items-center`}>
+                    <Text style={tw`text-[10px] text-white`}>01/02/2024 </Text>
                     <Text style={tw`text-[10px] text-white`}>10:40 PM </Text>
                     <Text
-                      style={tw`text-white bg-[#0C241E] self-start text-[11px]   px-4 py-1 rounded-md  `}
+                      style={tw`text-white bg-[#0C241E] self-start text-[10px]   px-4 py-1 rounded-md  `}
                     >
                       Cash
                     </Text>
@@ -139,7 +139,7 @@ const BillsComponents = ({ navigation, setTab }) => {
               </View>
               <View style={tw`flex items-center gap-4`}>
                 <TouchableOpacity>
-                  <Ionicons name="share-social" size={20} color="#727779" />
+                  <Ionicons name="share-social" size={20} color="#888" />
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() =>
@@ -148,7 +148,7 @@ const BillsComponents = ({ navigation, setTab }) => {
                     })
                   }
                 >
-                  <Ionicons name="eye-outline" size={20} color="gray" />
+                  <Ionicons name="eye-outline" size={20} color="#444" />
                 </TouchableOpacity>
               </View>
             </View>

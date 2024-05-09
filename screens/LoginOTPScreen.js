@@ -60,7 +60,13 @@ const LoginOTPScreen = ({ navigation }) => {
           {otp.map((digit, index) => (
             <TextInput
               key={index}
-              style={tw`bg-[#000] border border-[#04d8a0] w-16 text-center text-4xl text-[#04d8a0] font-bold rounded-lg`}
+              style={[
+                tw`bg-[#000] w-16 text-center text-4xl text-[#04d8a0] font-bold rounded-lg`,
+                {
+                  borderColor: !digit ? "#808080" : "#04d8a0",
+                  borderWidth: 1,
+                },
+              ]}
               keyboardType="numeric"
               maxLength={1}
               value={digit}
@@ -88,7 +94,6 @@ const LoginOTPScreen = ({ navigation }) => {
         </Text>
         <TouchableOpacity>
           <Text style={tw`text-[#04d8a0] text-sm  font-semibold `}>
-            {"  "}
             Resend OTP
           </Text>
         </TouchableOpacity>

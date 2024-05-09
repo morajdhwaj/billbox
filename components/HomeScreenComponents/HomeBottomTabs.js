@@ -7,6 +7,8 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome6 from "react-native-vector-icons/FontAwesome6";
 import DocumentScanner from "react-native-document-scanner-plugin";
 
+const svgContent = `<svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m256 512c-68.38 0-132.667-26.629-181.02-74.98s-74.98-112.64-74.98-181.02 26.629-132.667 74.98-181.02 112.64-74.98 181.02-74.98 132.667 26.629 181.02 74.98 74.98 112.64 74.98 181.02-26.629 132.667-74.98 181.02-112.64 74.98-181.02 74.98zm0-482c-132.548 0-240 107.452-240 240s107.452 240 240 240 240-107.452 240-240-107.452-240-240-240z"/><path d="m256 482c-124.617 0-226-101.383-226-226s101.383-226 226-226 226 101.383 226 226-101.383 226-226 226zm0-452c-124.617 0-226 101.383-226 226s101.383 226 226 226 226-101.383 226-226-101.383-226-226-226z"/><path d="m361 271h-60v60c0 16.569-13.431 30-30 30s-30-13.431-30-30v-60h-60c-16.569 0-30-13.431-30-30s13.431-30 30-30h60v-60c0-16.569 13.431-30 30-30s30 13.431 30 30v60h60c16.569 0 30 13.431 30 30s-13.431 30-30 30z"/></g></svg>`;
+
 const HomeBottomTabs = ({ scanDocument, setTab, tab }) => {
   handleAddDocs = () => {
     scanDocument();
