@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import tw from "twrnc";
 import HomeUpperTabs from "../components/HomeScreenComponents/HomeComponent";
 import HomeBottomTabs from "../components/HomeScreenComponents/HomeBottomTabs";
@@ -10,7 +10,7 @@ import HomeComponent from "../components/HomeScreenComponents/HomeComponent";
 import RewardComponent from "../components/HomeScreenComponents/RewardComponent";
 import WarrantyComponent from "../components/HomeScreenComponents/WarrantyComponent";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
   const [scannedImage, setScannedImage] = useState("");
   const [tab, setTab] = useState("home");
 
@@ -23,7 +23,7 @@ const HomeScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={tw`bg-[#000] h-full flex justify-between`}>
+    <View style={tw`bg-[#000] h-full flex justify-between `}>
       <View style={tw`h-[90%]`}>
         {tab === "home" && (
           <View>

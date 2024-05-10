@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Alert,
   TextInput,
+  Share,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import tw from "twrnc";
@@ -38,33 +39,31 @@ const BillsComponents = ({ navigation, setTab }) => {
       });
   };
 
-  const deleteBill = (id) => {
-    const options = {
-      method: "DELETE",
-      url: "https://billbox.catax.me/image/delete-image",
-      params: { image_id: id },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-        getAllBills();
-      })
-      .catch(function (error) {
-        console.error(error);
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        title: "App link",
+        message:
+          "Please install this app and stay safe , AppLink :https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en",
+        url: "https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en",
       });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      Toast.show({
+        type: "error",
+        text1: error?.message,
+        text2: error?.message,
+      });
+    }
   };
-
-  const createAlert = (id) =>
-    Alert.alert("Delete  Bill", "Are you want ton delete this bill", [
-      { text: "Yes", onPress: () => deleteBill(id) },
-      {
-        text: "No",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel",
-      },
-    ]);
 
   if (bills.length == 0) {
     return (
@@ -86,21 +85,22 @@ const BillsComponents = ({ navigation, setTab }) => {
           <TouchableOpacity onPress={() => setTab("home")}>
             <AntDesign name="arrowleft" size={20} color="white" />
           </TouchableOpacity>
-          <Text style={tw`text-white text-lg font-semibold`}>Bills</Text>
         </View>
         <View style={tw`flex flex-row items-center gap-5`}>
           <TextInput
-            style={tw`   text-white  text-xs w-40 border border-[#444] h-9 px-4  rounded-full`}
+            style={tw`   text-white  text-xs w-60 border border-[#444] h-9 px-4  rounded-full`}
             placeholder="Search bills"
             placeholderTextColor="#999999"
             maxLength={10}
           />
+        </View>
+        <View>
           <TouchableOpacity>
             <AntDesign name="filter" size={25} color="#00B386" />
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView style={tw` mt-5 `}>
+      <ScrollView style={tw` mt-5 mb-28 `}>
         {bills?.reverse().map((bill) => {
           return (
             <View
@@ -138,13 +138,16 @@ const BillsComponents = ({ navigation, setTab }) => {
                 </View>
               </View>
               <View style={tw`flex items-center gap-4`}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={onShare}>
                   <Ionicons name="share-social" size={20} color="#888" />
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate("SingleBillScreen", {
                       imageUrl: bill?.url,
+                      imageName: bill?.image_name,
+                      imageId: bill?.id,
+                      getAllBills,
                     })
                   }
                 >

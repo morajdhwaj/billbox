@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import React, { useRef, useState } from "react";
 import tw from "twrnc";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import CountryPicker from "react-native-country-picker-modal";
+import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import Toast from "react-native-toast-message";
 
 const LoginScreen = ({ navigation }) => {
@@ -58,19 +58,11 @@ const LoginScreen = ({ navigation }) => {
           </Text>
 
           <View style={tw` bg-black py-5 rounded-xl px-4`}>
-            <View style={tw`flex flex-row mx-5 mb-2`}>
-              <Text style={tw`text-white text-lg  font-semibold w-[35%]`}>
-                Country
-              </Text>
-              <Text style={tw`text-white text-lg w-[650%] font-semibold`}>
-                Mobile number
-              </Text>
-            </View>
             <View
               style={tw`border border-gray-600 rounded-xl flex flex-row items-center`}
             >
               <View
-                style={tw`flex flex-row items-center border-r border-r-gray-600 w-[30%] mx-2 `}
+                style={tw`flex flex-row items-center border-r border-r-gray-600 w-[35%] mx-2 `}
               >
                 <CountryPicker
                   {...{
@@ -84,17 +76,20 @@ const LoginScreen = ({ navigation }) => {
                     onSelect,
                   }}
                   visible={showCountry}
+                  theme={DARK_THEME}
                 />
                 {country && <Text>+{country?.callingCode}</Text>}
               </View>
               <View style={tw`flex  w-[70%]  px-2 `}>
                 <TextInput
                   ref={mobileNumberRef}
-                  style={tw`  text-gray-400 text-lg`}
+                  style={tw`  text-gray-400 text-base `}
                   keyboardType="phone-pad"
                   onChangeText={setMobileNumber}
                   value={mobileNumber}
                   maxLength={10}
+                  placeholder="Mobile Number"
+                  placeholderTextColor={"white"}
                 />
               </View>
             </View>

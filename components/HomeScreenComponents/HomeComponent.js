@@ -14,7 +14,7 @@ const HomeComponent = ({ navigation }) => {
           ImageBackground
           style={tw`h-10 w-10 rounded-full`}
         />
-        <Text style={tw`text-white text-xl font-semibold`}>Home</Text>
+        <Text style={tw`text-white text-xl font-semibold`}>Billbox</Text>
       </View>
       <View style={tw`flex flex-row items-center gap-5`}>
         <TouchableOpacity

@@ -13,7 +13,7 @@ import axios from "axios";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-const BillsScreen = ({ navigation }) => {
+const BillsScreen = ({ navigation, setTab }) => {
   const [bills, setBills] = useState([]);
 
   useEffect(() => {
@@ -56,16 +56,6 @@ const BillsScreen = ({ navigation }) => {
       });
   };
 
-  const createAlert = (id) =>
-    Alert.alert("Delete  Bill", "Are you want ton delete this bill", [
-      { text: "Yes", onPress: () => deleteBill(id) },
-      {
-        text: "No",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel",
-      },
-    ]);
-
   if (bills.length == 0) {
     return (
       <Text style={tw`text-white bg-black h-full p-5 text-center`}>
@@ -74,22 +64,23 @@ const BillsScreen = ({ navigation }) => {
     );
   }
 
-  console.log(bills, "bills");
+  console.log(bills[0].url, "bills");
+  console.log(bills[0].url, "dsdsdsdsd");
 
   return (
-    <ScrollView style={tw`bg-[#121212] h-full`}>
+    <View style={tw`bg-[#121212] `}>
       <View
         style={tw`flex flex-row w-full items-center justify-between px-5 mt-5`}
       >
         <View style={tw`flex flex-row gap-5`}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => setTab("home")}>
             <AntDesign name="arrowleft" size={20} color="white" />
           </TouchableOpacity>
-          <Text style={tw`text-white text-xl`}>Bills</Text>
+          <Text style={tw`text-white text-lg font-semibold`}>Bills</Text>
         </View>
         <View style={tw`flex flex-row items-center gap-5`}>
           <TextInput
-            style={tw`   text-white  w-40 border border-[#00B386] h-10 px-4  rounded-full`}
+            style={tw`   text-white  text-xs w-40 border border-[#444] h-9 px-4  rounded-full`}
             placeholder="Search bills"
             placeholderTextColor="#999999"
             maxLength={10}
@@ -99,66 +90,64 @@ const BillsScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={tw` mt-10 `}>
+      <ScrollView style={tw` mt-5 `}>
         {bills?.reverse().map((bill) => {
           return (
             <View
               style={tw` py-4 px-5 flex flex-row justify-between border-b border-b-gray-800  `}
               key={bill.id}
             >
-              <View style={tw`flex flex-row gap-2 w-4/6`}>
+              <View style={tw`flex flex-row gap-4 w-4/6`}>
                 <View>
                   <Image
                     source={{ uri: bill?.url }}
-                    style={tw`h-12 w-12  rounded-full`}
+                    style={tw`h-14 w-14  rounded-full`}
                   />
                 </View>
-                <View style={tw`flex gap-2`}>
-                  <View
-                    style={tw`flex flex-row gap-2 items-center justify-center`}
-                  >
+                <View style={tw`flex gap-1`}>
+                  <View style={tw`flex `}>
                     <Text style={tw`text-white text-lg font-semibold`}>
-                      Panasonic-electronic
+                      {bill?.image_name}
                     </Text>
-                    <Ionicons name="share-social" size={20} color="#00B386" />
                   </View>
                   <View>
-                    <Text style={tw`text-[11px] text-white`}>
+                    <Text style={tw`text-[11px] text-gray-400`}>
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry.
                     </Text>
                   </View>
-                  <View style={tw`flex flex-row gap-2`}>
-                    <Text style={tw`text-[11px] text-white`}>01-02-2024 </Text>
-                    <Text style={tw`text-[11px] text-white`}>10:40 PM </Text>
+                  <View style={tw`flex flex-row gap-2 items-center`}>
+                    <Text style={tw`text-[10px] text-white`}>01/02/2024 </Text>
+                    <Text style={tw`text-[10px] text-white`}>10:40 PM </Text>
                     <Text
-                      style={tw`text-white bg-[#0C241E] self-start text-xs   px-4 rounded-full`}
+                      style={tw`text-white bg-[#0C241E] self-start text-[10px]   px-4 py-1 rounded-md  `}
                     >
-                      UPI
+                      Cash
                     </Text>
                   </View>
                 </View>
               </View>
-              <View style={tw`flex items-center justify-center`}>
+              <View style={tw`flex items-center gap-4`}>
+                <TouchableOpacity>
+                  <Ionicons name="share-social" size={20} color="#888" />
+                </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() =>
                     navigation.navigate("SingleBillScreen", {
                       imageUrl: bill?.url,
+                      imageName: bill?.image_name,
+                      imageId: bill?.id,
                     })
                   }
                 >
-                  <Text
-                    style={tw`text-white bg-[#0C241E] self-start text-xs py-1  px-4 rounded-full`}
-                  >
-                    View
-                  </Text>
+                  <Ionicons name="eye-outline" size={20} color="#444" />
                 </TouchableOpacity>
               </View>
             </View>
           );
         })}
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 

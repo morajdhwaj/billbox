@@ -61,20 +61,22 @@ const UploadImage = ({ scannedImage, setScannedImage, setTab }) => {
   console.log();
 
   return (
-    <View>
-      {scannedImage && (
-        <View style={tw` h-60% mt-10`}>
-          <Image source={{ uri: scannedImage }} style={tw` h-50%`} />
-          <View style={tw``}>
-            <TextInput
-              style={tw`border-b-2 border-b-gray-400 text-2xl  text-white  font-bold  px-5`}
-              placeholder="Image Name"
-              value={imageName}
-              onChangeText={setImageName}
-            />
+    <View style={tw`m-5`}>
+      <View>
+        {scannedImage && (
+          <View style={tw` h-80% mt-10`}>
+            <Image source={{ uri: scannedImage }} style={tw` h-100%`} />
+            <View style={tw``}>
+              <TextInput
+                style={tw`border-b-2 border-b-gray-400 text-2xl  text-white  font-bold  px-5`}
+                placeholder="Image Name"
+                value={imageName}
+                onChangeText={setImageName}
+              />
+            </View>
           </View>
-        </View>
-      )}
+        )}
+      </View>
       <View style={tw`m-5`}>
         {loading ? (
           <View style={tw`bg-[#00B386]  rounded-xl`}>
