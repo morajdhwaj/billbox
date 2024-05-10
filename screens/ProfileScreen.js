@@ -20,34 +20,40 @@ const ProfileScreen = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View style={tw`bg-black h-full`}>
-      <View style={tw`flex flex-row w-full items-center px-5 mt-5`}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <AntDesign name="arrowleft" size={20} color="white" />
-        </TouchableOpacity>
-      </View>
-      <View
-        style={tw`flex flex-row w-full items-center justify-between p-5 border-b border-gray-500`}
-      >
-        <TouchableOpacity
-          onPress={() => navigation.navigate("UserScreen")}
-          style={tw``}
+    <View style={tw`bg-black h-full `}>
+      <View>
+        <View style={tw`flex flex-row w-full items-center px-5 mt-5`}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <AntDesign name="arrowleft" size={20} color="white" />
+          </TouchableOpacity>
+        </View>
+        <View
+          style={tw`flex flex-row w-full items-center justify-between p-5 border-b border-gray-500`}
         >
-          <View style={tw`flex-row gap-3 items-center `}>
-            <View>
-              <FontAwesome name="user-circle" size={40} color="#00B386" />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("UserScreen")}
+            style={tw``}
+          >
+            <View style={tw`flex-row gap-3 items-center `}>
+              <View>
+                <FontAwesome name="user-circle" size={40} color="#00B386" />
+              </View>
+              <View style={tw`flex gap-1`}>
+                <Text style={tw`text-white text-lg font-semibold`}>
+                  User Name
+                </Text>
+                <Text style={tw`text-white text-xs`}>Account details</Text>
+              </View>
             </View>
-            <View style={tw`flex gap-1`}>
-              <Text style={tw`text-white text-lg font-semibold`}>
-                User Name
-              </Text>
-              <Text style={tw`text-white text-xs`}>Account details</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("UserScreen")}>
-          <MaterialIcons name="keyboard-arrow-right" size={20} color="white" />
-        </TouchableOpacity>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("UserScreen")}>
+            <MaterialIcons
+              name="keyboard-arrow-right"
+              size={20}
+              color="white"
+            />
+          </TouchableOpacity>
+        </View>
       </View>
       <ScrollView style={tw` flex gap-2`}>
         <View
@@ -182,6 +188,12 @@ const ProfileScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      {/* <View style={tw`m-5 mx-5`}>
+        <TouchableOpacity style={tw`flex flex-row`}>
+          <Text style={tw`text-white`}>About us</Text>
+          <MaterialIcons name="keyboard-arrow-right" size={20} color="white" />
+        </TouchableOpacity>
+      </View> */}
       <LogoutModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}

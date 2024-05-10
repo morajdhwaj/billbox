@@ -8,7 +8,7 @@ import UploadImage from "../components/HomeScreenComponents/UploadImage";
 import BillsComponents from "../components/HomeScreenComponents/BillsComponents";
 import HomeComponent from "../components/HomeScreenComponents/HomeComponent";
 import RewardComponent from "../components/HomeScreenComponents/RewardComponent";
-import WarrantComponent from "../components/HomeScreenComponents/WarrantComponent";
+import WarrantyComponent from "../components/HomeScreenComponents/WarrantyComponent";
 
 const HomeScreen = ({ navigation }) => {
   const [scannedImage, setScannedImage] = useState("");
@@ -53,7 +53,7 @@ const HomeScreen = ({ navigation }) => {
         )}
         {tab === "warrant" && (
           <View>
-            <WarrantComponent setTab={setTab} navigation={navigation} />
+            <WarrantyComponent setTab={setTab} navigation={navigation} />
           </View>
         )}
       </View>

@@ -105,7 +105,9 @@ const LoginScreen = ({ navigation }) => {
             style={tw`bg-[#00B386] mt-10 rounded-xl`}
             onPress={handleSubmit}
           >
-            <Text style={tw`text-black text-2xl self-center font-bold py-2 `}>
+            <Text
+              style={tw`text-white text-2xl self-center font-semibold py-2  `}
+            >
               Next
             </Text>
           </TouchableOpacity>

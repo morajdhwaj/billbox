@@ -29,7 +29,11 @@ function App() {
   return (
     <Provider store={Store}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="IntroScreen" component={IntroScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />

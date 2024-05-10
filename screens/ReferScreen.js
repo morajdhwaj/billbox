@@ -14,9 +14,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import EvilIcons from "react-native-vector-icons/EvilIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
+import TermsModal from "../components/Modals/TermsModal";
+
 const ReferScreen = ({ navigation }) => {
-  const [alertClick, setAlertClick] = useState(false);
-  const [animation] = useState(new Animated.Value(0));
+  const [modalVisible, setModalVisible] = useState(false);
 
   const whatsAppMessage = () => {
     // Replace 'message' with the message you want to send
@@ -77,32 +78,6 @@ const ReferScreen = ({ navigation }) => {
       alert(error.message);
     }
   };
-  useEffect(() => {
-    if (alertClick) {
-      Animated.timing(animation, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }).start();
-    } else {
-      Animated.timing(animation, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start();
-    }
-  }, [alertClick]);
-
-  const translateY = animation.interpolate({
-    inputRange: [0, 1],
-    outputRange: [100, 0],
-  });
-
-  const opacity = animation.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  });
-
   return (
     <View style={tw`bg-black h-full`}>
       <View
@@ -114,7 +89,7 @@ const ReferScreen = ({ navigation }) => {
           </TouchableOpacity>
           <Text style={tw`text-white text-lg font-semibold`}>Invite</Text>
         </View>
-        <TouchableOpacity onPress={() => setAlertClick(true)}>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
           <AntDesign name="questioncircle" size={20} color="#00B386" />
         </TouchableOpacity>
       </View>
@@ -133,72 +108,46 @@ const ReferScreen = ({ navigation }) => {
             Refer your friend to Billbox
           </Text>
         </View>
-        {alertClick ? (
-          <Animated.View
-            style={[
-              tw`flex mx-5 mt-5 gap-2`,
-              { opacity, transform: [{ translateY }] },
-            ]}
+        <View style={tw`flex `}>
+          <Text style={tw`text-white m-5`}>
+            Invite your friend to Billbox, and share the joy of investing with
+            them
+          </Text>
+          <TouchableOpacity
+            style={tw`flex flex-row items-center  justify-center gap-2`}
+            onPress={onShare}
           >
-            <Text style={tw`text-white text-xl font-semibold`}>
-              How It Works?
-            </Text>
-            <Text style={tw`text-white`}>
-              Billbox referral program is for select user who have already
-              invested through Billbox
-            </Text>
-            <Text style={tw`text-white`}>
-              Share your Billbox referral link with your friend.
-            </Text>
-            <Text style={tw`text-white`}>
-              By participating , you accept our
-              <Text style={tw`text-blue-500`}> terms and conditions</Text>
-            </Text>
+            <Ionicons name="share-social" size={25} color="#00B386" />
+
+            <Text style={tw`text-[#00B386]  `}>Share invite link</Text>
+          </TouchableOpacity>
+          <View style={tw`w-full p-5  flex  gap-4`}>
             <TouchableOpacity
-              style={tw`flex flex-row items-center  mt-5 bg-[#00B386] rounded-lg gap-2 justify-center p-4`}
-              onPress={() => setAlertClick(false)}
+              style={tw`flex flex-row items-center  bg-[#33A9E1] w-full rounded-lg justify-center p-2`}
+              onPress={telegramMessage}
             >
-              <Text style={tw` text-center  text-white`}>OKAY</Text>
+              <EvilIcons name="sc-telegram" size={28} color="white" />
+
+              <Text style={tw` text-center  text-white`}>
+                INVITE VIA TELEGRAM
+              </Text>
             </TouchableOpacity>
-          </Animated.View>
-        ) : (
-          <View style={tw`flex `}>
-            <Text style={tw`text-white m-5`}>
-              Invite your friend to Billbox, and share the joy of investing with
-              them
-            </Text>
             <TouchableOpacity
-              style={tw`flex flex-row items-center  justify-center gap-2`}
-              onPress={onShare}
+              style={tw`flex flex-row items-center  bg-[#00B386] rounded-lg gap-2 justify-center p-2`}
+              onPress={whatsAppMessage}
             >
-              <Ionicons name="share-social" size={25} color="#00B386" />
+              <FontAwesome name="whatsapp" size={23} color="white" />
 
-              <Text style={tw`text-[#00B386]  `}>Share invite link</Text>
+              <Text style={tw` text-center  text-white`}>
+                INVITE VIA WHATSAPP
+              </Text>
             </TouchableOpacity>
-            <View style={tw`w-full p-5  flex  gap-4`}>
-              <TouchableOpacity
-                style={tw`flex flex-row items-center  bg-[#33A9E1] w-full rounded-lg justify-center p-2`}
-                onPress={telegramMessage}
-              >
-                <EvilIcons name="sc-telegram" size={28} color="white" />
-
-                <Text style={tw` text-center  text-white`}>
-                  INVITE VIA TELEGRAM
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={tw`flex flex-row items-center  bg-[#00B386] rounded-lg gap-2 justify-center p-2`}
-                onPress={whatsAppMessage}
-              >
-                <FontAwesome name="whatsapp" size={23} color="white" />
-
-                <Text style={tw` text-center  text-white`}>
-                  INVITE VIA WHATSAPP
-                </Text>
-              </TouchableOpacity>
-            </View>
           </View>
-        )}
+        </View>
+        <TermsModal
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        />
       </View>
     </View>
   );
